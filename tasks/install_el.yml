@@ -1,0 +1,19 @@
+---
+# tasks file for keybase - EL Family
+
+- name: EL Family | Adding repository for {{ keybase_repo_el }}
+  yum_repository:
+    name: "{{ keybase_repo_el_name }}"
+    description: "{{ keybase_repo_el_description }}"
+    baseurl: "{{ keybase_repo_el }}"
+    gpgcheck: "{{ keybase_repo_el_gpgcheck }}"
+    gpgkey: "{{ keybase_repo_el_gpgkey }}"
+    file: "{{ keybase_repo_el_filename }}"
+    state: "{{ keybase_repo_el_desired_state }}"
+    enabled: "{{ keybase_repo_el_enabled }}"
+
+- name: EL Family | Installing {{ keybase_app }}
+  yum:
+    name: "{{ keybase_app }}"
+    state: "{{ keybase_app_desired_state }}"
+    update_cache: yes
