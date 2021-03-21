@@ -81,7 +81,7 @@ For customizing behavior of role (i.e. installing latest verion of **keybase**) 
   roles:
     - darkwizard242.keybase
   vars:
-    keybase_apps_desired_state: latest
+    keybase_app_desired_state: latest
 ```
 
 For customizing behavior of role (i.e. un-installation of **keybase** packages) in ansible playbooks.
@@ -91,7 +91,7 @@ For customizing behavior of role (i.e. un-installation of **keybase** packages) 
   roles:
     - darkwizard242.keybase
   vars:
-    keybase_apps_desired_state: absent
+    keybase_app_desired_state: absent
 ```
 
 ## License
