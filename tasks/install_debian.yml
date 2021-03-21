@@ -1,0 +1,29 @@
+---
+# tasks file for keybase - Debian/Ubuntu Family
+
+- name: Debian/Ubuntu Family | Installing {{ keybase_debian_pre_reqs }}
+  apt:
+    name: "{{ keybase_debian_pre_reqs }}"
+    state: "{{ keybase_debian_pre_reqs_desired_state }}"
+    force_apt_get: yes
+    update_cache: yes
+
+- name: Debian/Ubuntu Family | Add gpg signing key for {{ keybase_app }}
+  apt_key:
+    id: "{{ keybase_repo_debian_gpg_keyid }}"
+    keyserver: "{{ keybase_repo_debian_gpg_keyserver }}"
+    state: present
+
+- name: Debian/Ubuntu Family | Adding repository {{ keybase_repo_debian }}
+  apt_repository:
+    repo: "{{ keybase_repo_debian }}"
+    state: "{{ keybase_repo_debian_desired_state }}"
+    filename: "{{ keybase_repo_debian_filename }}"
+    update_cache: yes
+
+- name: Debian/Ubuntu Family | Installing {{ keybase_app }}
+  apt:
+    name: "{{ keybase_app }}"
+    state: "{{ keybase_app_desired_state }}"
+    force_apt_get: yes
+    update_cache: yes
