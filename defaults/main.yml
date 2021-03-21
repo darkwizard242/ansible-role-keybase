@@ -1,0 +1,24 @@
+---
+# defaults file for keybase
+
+keybase_app: keybase
+keybase_app_desired_state: present
+
+# Debian family based
+keybase_debian_pre_reqs: gnupg
+keybase_debian_pre_reqs_desired_state: present
+keybase_repo_debian_gpg_keyid: '47484E50656D16C7'
+keybase_repo_debian_gpg_keyserver: keyserver.ubuntu.com
+keybase_repo_debian: "deb http://prerelease.keybase.io/deb stable main"
+keybase_repo_debian_filename: "{{ keybase_app }}"
+keybase_repo_debian_desired_state: present
+
+# EL family based
+keybase_repo_el: http://prerelease.keybase.io/rpm/x86_64
+keybase_repo_el_name: keybase
+keybase_repo_el_description: keybase
+keybase_repo_el_enabled: yes
+keybase_repo_el_gpgcheck: yes
+keybase_repo_el_gpgkey: https://keybase.io/docs/server_security/code_signing_key.asc
+keybase_repo_el_filename: keybase
+keybase_repo_el_desired_state: present
