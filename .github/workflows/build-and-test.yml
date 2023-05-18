@@ -16,7 +16,7 @@ on:
     - cron: '0 2 * * *'
 
 env:
-  CUSTOM_DIR: 'darkwizard242.keybase
+  CUSTOM_DIR: 'darkwizard242.keybase'
 
 jobs:
 
